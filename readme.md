@@ -82,4 +82,4 @@ Alternatively, try to **write several fine-grained unit tests**
 on the game behavior. It's far easier to do so after you 
 refactored the code isn't it? Refactoring = Deep Understanding.
 
-Hint: you are allowed to expose the player information out of the game
+Hint: you are allowed to expose the player information out of the game!
