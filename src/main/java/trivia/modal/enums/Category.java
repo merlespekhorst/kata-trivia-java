@@ -1,4 +1,4 @@
-package trivia.enums;
+package trivia.modal.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,19 +1,25 @@
 package trivia;
 
-import trivia.enums.Category;
+import trivia.modal.dto.Question;
+import trivia.modal.enums.Category;
+import trivia.repository.QuestionsRepository;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 // REFACTOR ME
 public class GameBetter implements IGame {
+   private final QuestionsRepository questionsRepository = new QuestionsRepository();
+
    ArrayList players = new ArrayList();
    int[] places = new int[6];
    int[] purses = new int[6];
    boolean[] inPenaltyBox = new boolean[6];
 
-   LinkedList popQuestions = new LinkedList();
+   questionsRepository.generateQuestions();
+   List<Question> popQuestions = new LinkedList();
    LinkedList scienceQuestions = new LinkedList();
    LinkedList sportsQuestions = new LinkedList();
    LinkedList rockQuestions = new LinkedList();
@@ -105,15 +111,6 @@ public class GameBetter implements IGame {
       if (places[currentPlayer] % 4 == 0) return Category.POP.getStatus();
       if (places[currentPlayer] % 4 == 1) return Category.SCIENCE.getStatus();
       if (places[currentPlayer] % 4 == 2) return Category.SPORTS.getStatus();
-//      if (places[currentPlayer] == 0) return Category.POP.getStatus();
-//      if (places[currentPlayer] == 4) return Category.POP.getStatus();
-//      if (places[currentPlayer] == 8) return Category.POP.getStatus();
-//      if (places[currentPlayer] == 1) return Category.SCIENCE.getStatus();
-//      if (places[currentPlayer] == 5) return Category.SCIENCE.getStatus();
-//      if (places[currentPlayer] == 9) return Category.SCIENCE.getStatus();
-//      if (places[currentPlayer] == 2) return Category.SPORTS.getStatus();
-//      if (places[currentPlayer] == 6) return Category.SPORTS.getStatus();
-//      if (places[currentPlayer] == 10) return Category.SPORTS.getStatus();
       return Category.ROCK.getStatus();
    }
 
