@@ -5,8 +5,10 @@ import trivia.modal.enums.Category;
 import trivia.repository.QuestionsRepository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 // REFACTOR ME
@@ -19,7 +21,8 @@ public class GameBetter implements IGame {
    boolean[] inPenaltyBox = new boolean[6];
 
    questionsRepository.generateQuestions();
-   List<Question> popQuestions = new LinkedList();
+   Map<Category, List<Question>> questionsByCategory = new HashMap<>();
+   LinkedList popQuestions = new LinkedList<Question>();
    LinkedList scienceQuestions = new LinkedList();
    LinkedList sportsQuestions = new LinkedList();
    LinkedList rockQuestions = new LinkedList();
