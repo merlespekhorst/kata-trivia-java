@@ -63,4 +63,8 @@ public class GameTest {
 
 		return new String(baos.toByteArray());
 	}
+
+	private void testPush() {
+
+	}
 }
