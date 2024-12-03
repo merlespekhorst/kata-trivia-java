@@ -87,18 +87,22 @@ public class GameBetter implements IGame {
    }
 
    private void askQuestion() {
-      if (currentCategory() == "Pop")
-         System.out.println(popQuestions.removeFirst());
-      if (currentCategory() == "Science")
-         System.out.println(scienceQuestions.removeFirst());
-      if (currentCategory() == "Sports")
-         System.out.println(sportsQuestions.removeFirst());
-      if (currentCategory() == "Rock")
-         System.out.println(rockQuestions.removeFirst());
+      var currentCategory = currentCategory();
+      switch (currentCategory) {
+         case "Pop": System.out.println(popQuestions.removeFirst());
+         case "Science": System.out.println(scienceQuestions.removeFirst());
+         case "Sports": System.out.println(sportsQuestions.removeFirst());
+         case "Rock": System.out.println(rockQuestions.removeFirst());
+      }
    }
 
 
    private String currentCategory() {
+//      if (places[currentPlayer] % 4 == 0) return "Pop";
+//      if (places[currentPlayer] % 4 == 1) return "Science";
+//      if (places[currentPlayer] % 4 == 2) return "Sports";
+
+
       if (places[currentPlayer] == 0) return "Pop";
       if (places[currentPlayer] == 4) return "Pop";
       if (places[currentPlayer] == 8) return "Pop";
