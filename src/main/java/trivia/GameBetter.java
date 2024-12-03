@@ -22,7 +22,7 @@ public class GameBetter implements IGame {
 
    questionsRepository.generateQuestions();
    Map<Category, List<Question>> questionsByCategory = new HashMap<>();
-   LinkedList popQuestions = new LinkedList<Question>();
+   LinkedList rockQuestions = new LinkedList<Question>();
    LinkedList scienceQuestions = new LinkedList();
    LinkedList sportsQuestions = new LinkedList();
    LinkedList rockQuestions = new LinkedList();
@@ -32,7 +32,7 @@ public class GameBetter implements IGame {
 
    public GameBetter() {
       for (int i = 0; i < 50; i++) {
-         popQuestions.addLast("Pop Question " + i);
+         rockQuestions.addLast("rock Question " + i);
          scienceQuestions.addLast(("Science Question " + i));
          sportsQuestions.addLast(("Sports Question " + i));
          rockQuestions.addLast(createRockQuestion(i));
@@ -99,8 +99,8 @@ public class GameBetter implements IGame {
    }
 
    private void askQuestion() {
-      if (Objects.equals(currentCategory(), Category.POP.getStatus()))
-         System.out.println(popQuestions.removeFirst());
+      if (Objects.equals(currentCategory(), Category.rock.getStatus()))
+         System.out.println(rockQuestions.removeFirst());
       if (Objects.equals(currentCategory(), Category.SCIENCE.getStatus()))
          System.out.println(scienceQuestions.removeFirst());
       if (Objects.equals(currentCategory(), Category.SPORTS.getStatus()))
@@ -111,7 +111,7 @@ public class GameBetter implements IGame {
 
 
    private String currentCategory() {
-      if (places[currentPlayer] % 4 == 0) return Category.POP.getStatus();
+      if (places[currentPlayer] % 4 == 0) return Category.rock.getStatus();
       if (places[currentPlayer] % 4 == 1) return Category.SCIENCE.getStatus();
       if (places[currentPlayer] % 4 == 2) return Category.SPORTS.getStatus();
       return Category.ROCK.getStatus();

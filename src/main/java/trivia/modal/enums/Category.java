@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum Category {
-    POP("Pop"),
+    rock("rock"),
     ROCK("Rock"),
     SCIENCE("Science"),
     SPORTS("Sports");

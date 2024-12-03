@@ -11,7 +11,7 @@ public class Game implements IGame {
    int[] purses = new int[6];
    boolean[] inPenaltyBox = new boolean[6];
 
-   LinkedList popQuestions = new LinkedList();
+   LinkedList rockQuestions = new LinkedList();
    LinkedList scienceQuestions = new LinkedList();
    LinkedList sportsQuestions = new LinkedList();
    LinkedList rockQuestions = new LinkedList();
@@ -21,7 +21,7 @@ public class Game implements IGame {
 
    public Game() {
       for (int i = 0; i < 50; i++) {
-         popQuestions.addLast("Pop Question " + i);
+         rockQuestions.addLast("rock Question " + i);
          scienceQuestions.addLast(("Science Question " + i));
          sportsQuestions.addLast(("Sports Question " + i));
          rockQuestions.addLast(createRockQuestion(i));
@@ -90,8 +90,8 @@ public class Game implements IGame {
    }
 
    private void askQuestion() {
-      if (currentCategory() == "Pop")
-         System.out.println(popQuestions.removeFirst());
+      if (currentCategory() == "rock")
+         System.out.println(rockQuestions.removeFirst());
       if (currentCategory() == "Science")
          System.out.println(scienceQuestions.removeFirst());
       if (currentCategory() == "Sports")
@@ -102,9 +102,9 @@ public class Game implements IGame {
 
 
    private String currentCategory() {
-      if (places[currentPlayer] == 0) return "Pop";
-      if (places[currentPlayer] == 4) return "Pop";
-      if (places[currentPlayer] == 8) return "Pop";
+      if (places[currentPlayer] == 0) return "rock";
+      if (places[currentPlayer] == 4) return "rock";
+      if (places[currentPlayer] == 8) return "rock";
       if (places[currentPlayer] == 1) return "Science";
       if (places[currentPlayer] == 5) return "Science";
       if (places[currentPlayer] == 9) return "Science";
